@@ -10,8 +10,8 @@ const expenseRoutes = require('./routes/expenseRoutes');
 
 
 //Connect Database
-// const uri = process.env.MONGO_ATLAS_DB;
-mongoose.connect('mongodb+srv://adebayoileri:ay2mLMqkNZgbwGP@trackman-kt05w.mongodb.net/test?retryWrites=true&w=majority',{
+const uri = process.env.MONGO_ATLAS_DB;
+mongoose.connect(uri,{
     useNewUrlParser:true,
     useCreateIndex:true,
     useUnifiedTopology: true
