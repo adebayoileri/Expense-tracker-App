@@ -19,7 +19,7 @@ const expenseSchema = mongoose.Schema({
         required:true
     }
 },{
-    timestamp:true
+    timestamps:true
 }); 
 
 module.exports = mongoose.model('Expense', expenseSchema);

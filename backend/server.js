@@ -48,8 +48,8 @@ app.use('*', (req, res, next) => {
 
 
 //Middlewares
-app.use('/api/v1', userRoutes);
-app.use('/api/v1', expenseRoutes);
+app.use('/api/v1/user/auth', userRoutes);
+app.use('/api/v1/expenses', expenseRoutes);
 
 //PORT
 
