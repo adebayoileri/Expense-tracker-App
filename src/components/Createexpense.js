@@ -44,6 +44,8 @@ export class createexpense extends Component {
         return (
     <div className="container mt-60">
     <div className="alert alert-success" role="alert"> Expense Added </div>
+    <h3 className="text-left mt-40">Add New Expense</h3>
+    <br></br>
     <form>
     <div className="form-group">
     <label for="description">Description(Spent On):</label>
