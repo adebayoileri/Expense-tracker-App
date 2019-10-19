@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route,Link} from 'react-router-dom';
 import NavBar from './components/layouts/NavBar';
 import Footer from './components/layouts/Footer';
 import editExpense from './components/editExpense';
@@ -22,8 +22,9 @@ function App() {
             <h1 className="text-center mt-40" >Welcome to the Expense tracker App</h1>
             <div className="gridcont-a">
             <img className="gridcont-b" src={money} alt="Moneypng" style={{maxwidth:'280px'}}/>
-            <h2 className="gridcont-c text-center">Save Your Spendings</h2>
+            <h2 className="gridcont-c text-center">Save Your Spendings<p>With #1 Expense Tracker Software</p></h2>
             </div>
+            <Link to="/create"><button type="button" class="btn btn-dark">Create new expense +</button></Link>
       </div>
       </React.Fragment>
     )} />

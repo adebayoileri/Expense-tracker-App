@@ -17,7 +17,13 @@ body{
     grid-template-rows: minmax(280px ,auto);
 }
 .gridcont-c{
-    font-size: 43px;
+    font-size: 36px;
     margin: auto;
-
+}
+@media(max-width:530px){
+    .gridcont-a{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(280px ,auto);
+    }
 }
