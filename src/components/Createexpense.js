@@ -43,17 +43,18 @@ export class createexpense extends Component {
     render() {
         return (
     <div className="container mt-60">
+    <div className="alert alert-success" role="alert"> Expense Added </div>
     <form>
     <div className="form-group">
-    <label for="description">Description(Spent On)</label>
+    <label for="description">Description(Spent On):</label>
     <input type="text" className="form-control" id="description" placeholder="Description"/>
     </div>
     <div className="form-group">
-    <label for="amount">Category</label>
+    <label for="amount">Amount:</label>
     <input type="number" className="form-control" id="amount" placeholder="Amount spent"/>
     </div>
     <div class="form-group">
-      <label for="payment-method">Payment Method</label>
+      <label for="payment-method">Payment Method:</label>
       <select id="payment-method" class="form-control">
         <option selected>Cash</option>
         <option>Card</option>
@@ -61,13 +62,17 @@ export class createexpense extends Component {
       </select>
     </div>
     <div className="form-group">
-    <label for="category">Category</label>
+    <label for="category">Category:</label>
     <select class="form-control" id="category">
       <option selected>Transport</option>
       <option>Food</option>
       <option>Needs</option>
       <option>Miscellaneous/Wants</option>
     </select>
+     </div>
+     <div className="form-group">
+         <label for="date">Date:</label>
+         <input className="form-control" type="date" id="date"required/>
      </div>
      <button type="submit" class="btn btn-primary">Add expense</button>
     </form>

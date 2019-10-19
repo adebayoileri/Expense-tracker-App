@@ -10,9 +10,9 @@ export default function Footer() {
     )
 }
 const footerstyle ={
+    marginTop:'100px',
     padding:'1em',
     width:'100%',
-    position:'fixed',
     textAlign:'center',
     left: 0,
     bottom:0
