@@ -16,3 +16,8 @@ body{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: minmax(280px ,auto);
 }
+.gridcont-c{
+    font-size: 43px;
+    margin: auto;
+
+}
