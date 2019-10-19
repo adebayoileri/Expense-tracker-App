@@ -5,7 +5,7 @@ const router = express.Router();
 const Expense = require('../models/expense.model');
 
 //Get all expenses
-router.get('/',(req,res)=>{
+router.get('/expenses',(req,res)=>{
     Expense.find().then(expenses => res.json(expenses)).catch(err=> res.status(400).json(`Error:${err}`));
 });
 
