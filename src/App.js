@@ -9,6 +9,7 @@ import login from './components/pages/loginUser';
 import signup from './components/pages/signUpUser';
 import about from './components/pages/about';
 import './App.css';
+import money from './img/moneysvg.png';
 
 
 function App() {
@@ -18,7 +19,11 @@ function App() {
     <Route exact path="/" render={props =>(
       <React.Fragment>
       <div className="container" style={{padding:'1em'}}>
-            <h1 className="text-center mt-40">Welcome to the Expense tracker App</h1>
+            <h1 className="text-center mt-40" >Welcome to the Expense tracker App</h1>
+            <div className="gridcont-a">
+            <img className="gridcont-b" src={money} alt="Moneypng" style={{maxwidth:'280px'}}/>
+            <h3 className="gridcont-c">Save By Spendings</h3>
+            </div>
       </div>
       </React.Fragment>
     )} />

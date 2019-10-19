@@ -46,15 +46,23 @@ export class createexpense extends Component {
     <div className="alert alert-success" role="alert"> Expense Added </div>
     <h3 className="text-left mt-40">Add New Expense</h3>
     <br></br>
+
     <form>
     <div className="form-group">
     <label for="description">Description(Spent On):</label>
     <input type="text" className="form-control" id="description" placeholder="Description"/>
     </div>
+
     <div className="form-group">
     <label for="amount">Amount:</label>
+    <div className="input-group">
+    <div className="input-group-prepend">
+      <span className="input-group-text">₦</span>
+    </div>
     <input type="number" className="form-control" id="amount" placeholder="Amount spent"/>
     </div>
+    </div>
+
     <div class="form-group">
       <label for="payment-method">Payment Method:</label>
       <select id="payment-method" class="form-control">
@@ -63,15 +71,17 @@ export class createexpense extends Component {
         <option>Crypto</option>
       </select>
     </div>
+
     <div className="form-group">
     <label for="category">Category:</label>
-    <select class="form-control" id="category">
+    <select className="form-control" id="category">
       <option selected>Transport</option>
       <option>Food</option>
       <option>Needs</option>
       <option>Miscellaneous/Wants</option>
     </select>
      </div>
+
      <div className="form-group">
          <label for="date">Date:</label>
          <input className="form-control" type="date" id="date"required/>
