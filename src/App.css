@@ -11,3 +11,8 @@ body{
     max-width: 320px auto;
     height: 100vh auto;
 }
+.gridcont-a{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(280px ,auto);
+}

@@ -22,7 +22,7 @@ function App() {
             <h1 className="text-center mt-40" >Welcome to the Expense tracker App</h1>
             <div className="gridcont-a">
             <img className="gridcont-b" src={money} alt="Moneypng" style={{maxwidth:'280px'}}/>
-            <h3 className="gridcont-c">Save By Spendings</h3>
+            <h2 className="gridcont-c text-center mt-50">Save Your Spendings</h2>
             </div>
       </div>
       </React.Fragment>
