@@ -10,14 +10,20 @@ export class loginUser extends Component {
                 <form>
   <div className="form-group">
     <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required/>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required/>
+    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
-  <div class="form-group">
+  <div className="form-group">
     <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" placeholder="Password" required/>
+    <input type="password" className="form-control" id="password" placeholder="Password" required/>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+
+  <div className="form-group">
+      <input type="checkbox" className="form-check-input" id="checkbox"/>
+      <label htmlFor="Rememberpass">Remember Password</label>
+  </div>
+
+  <button type="submit" className="btn btn-primary">Submit</button>
 </form>
             </div>
         )

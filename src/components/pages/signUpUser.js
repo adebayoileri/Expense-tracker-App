@@ -17,10 +17,6 @@ export class signUpUser extends Component {
     <label for="password">Create Password</label>
     <input type="password" className="form-control" id="password" placeholder="Enter a Password" required/>
   </div>
-  <div className="form-group">
-      <input type="checkbox" className="form-check-input" id="checkbox"/>
-      <label for="Rememberpass">Remember Password</label>
-  </div>
   <button type="submit" onSubmit="window.location='/login'"className="btn btn-primary">Sign Up</button>
 </form>
             </div>
