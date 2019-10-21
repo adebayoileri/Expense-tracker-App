@@ -3,16 +3,32 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+export class Createexpense extends Component {
+    constructor(props){
+        super(props);
+    this.onSubmit =this.onSubmit.bind(this);
 
-export class createexpense extends Component {
-    state ={
+        this.state = {
         description:'',
         category:'',
         payment:'',
         amount:'',
         date:new Date()
+         }
     }
-    onChangeDescription(e){
+    onSubmit(event){
+         const expense = {
+             description:this.state.description,
+           payment:this.state.payment,
+           category:this.state.category,
+           amount:this.state.amount,
+           date:this.state.date
+       }
+       event.preventDefault();
+      console.log(expense); 
+    //    window.location ='/';
+    }
+        onChangeDescription(e){
         this.setState({
             description:e.target.value
         });
@@ -38,26 +54,14 @@ export class createexpense extends Component {
         });
     }
 
-    onSubmit(e){
-        e.prevent.Default();
-        const expense = {
-            description:this.state.description,
-            payment:this.state.payment,
-            category:this.state.category,
-            amount:this.state.amount,
-            date:this.state.date
-        }
-        console.log(expense); 
-        window.location ='/expenses';
-    }
     render() {
         return (
-    <div className="container mt-60">
+          <div className="container mt-60">
     <div className="alert alert-success" role="alert"> Expense Added </div>
     <h3 className="text-left mt-40">Add New Expense</h3>
     <br></br>
 
-    <form>
+    <form onSubmit={this.onSubmit}>
     <div className="form-group">
     <label htmlFor="description">Description(Spent On):</label>
     <input type="text" className="form-control" id="description" value={this.state.description} onChange={this.onChangeDescription.bind(this)} placeholder="Description"/>
@@ -95,12 +99,14 @@ export class createexpense extends Component {
          <label htmlFor="date">Date:</label>
          <div className="form-group">
         <DatePicker selected={this.state.date} onChange={this.onChangeDate.bind(this)}/>
+        </div>
+            <div className="form-group">
+     <input onSubmit={this.onSubmit.bind(this)} type="submit" value="Add expense" className="btn btn-primary"/>
      </div>
-     <button type="submit" onSubmit={this.onSubmit.bind(this)} className="btn btn-primary">Add expense</button>
     </form>
     </div>
         )
     }
 }
 
-export default createexpense;
+export default Createexpense;
