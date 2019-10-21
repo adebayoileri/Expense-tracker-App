@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+// import axios from 'axios';
 
 export class Createexpense extends Component {
     constructor(props){
@@ -26,7 +27,10 @@ export class Createexpense extends Component {
        }
        event.preventDefault();
       console.log(expense); 
-       window.location ='/expenses';
+    //   axios.post('http://localhost:4300/api/v1/expenses/create',expense)
+    //   .then(res => console.log(res.data))
+    //   .catch(err=> console.log(err));
+    //    window.location ='/expenses';
     }
         onChangeDescription(e){
         this.setState({

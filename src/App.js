@@ -33,7 +33,7 @@ function App() {
     <Route path="/about" component={about} />
     <Route path="/expenses" component={ expenseList} />
     <Route path="/auth/login" component={login} />
-    <Route path="/signup" component={signup} />
+    <Route path="/auth/signup" component={signup} />
     <Footer/>
     </Router>
   );

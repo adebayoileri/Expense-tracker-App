@@ -18,7 +18,7 @@ export default function NavBar() {
     </li>
   </ul>
   <button className="btn btn-sm align-middle btn-primary ml-3 order-lg-last" type="button"><Link to="/auth/login" className="text-white">Login</Link></button>
-  <button className="btn btn-sm align-middle btn-primary ml-3 order-lg-last" type="button"><Link to="/signup" className="text-white">Signup</Link></button>
+  <button className="btn btn-sm align-middle btn-primary ml-3 order-lg-last" type="button"><Link to="/auth/signup" className="text-white">Signup</Link></button>
 </nav>
     )
 }
