@@ -26,7 +26,7 @@ export class Createexpense extends Component {
        }
        event.preventDefault();
       console.log(expense); 
-    //    window.location ='/';
+       window.location ='/expenses';
     }
         onChangeDescription(e){
         this.setState({

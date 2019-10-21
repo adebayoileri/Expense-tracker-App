@@ -9,12 +9,12 @@ export class loginUser extends Component {
             <div className="container">
                 <form>
   <div className="form-group">
-    <label for="email">Email address</label>
+    <label htmlFor="email">Email address</label>
     <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required/>
     <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div className="form-group">
-    <label for="password">Password</label>
+    <label htmlFor="password">Password</label>
     <input type="password" className="form-control" id="password" placeholder="Password" required/>
   </div>
 

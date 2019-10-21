@@ -14,10 +14,10 @@ export class signUpUser extends Component {
     <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div className="form-group">
-    <label for="password">Create Password</label>
+    <label htmlFor="password">Create Password</label>
     <input type="password" className="form-control" id="password" placeholder="Enter a Password" required/>
   </div>
-  <button type="submit" onSubmit="window.location='/login'"className="btn btn-primary">Sign Up</button>
+  <button type="submit"className="btn btn-primary">Sign Up</button>
 </form>
             </div>
             </React.Fragment>
