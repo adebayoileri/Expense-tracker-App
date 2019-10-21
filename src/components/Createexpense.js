@@ -101,7 +101,7 @@ export class Createexpense extends Component {
         <DatePicker selected={this.state.date} onChange={this.onChangeDate.bind(this)}/>
         </div>
             <div className="form-group">
-     <input onSubmit={this.onSubmit.bind(this)} type="submit" value="Add expense" className="btn btn-primary"/>
+     <input type="submit" value="Add expense" className="btn btn-primary"/>
      </div>
     </form>
     </div>
