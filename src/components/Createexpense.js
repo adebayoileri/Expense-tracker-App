@@ -64,7 +64,7 @@ export class Createexpense extends Component {
     <form onSubmit={this.onSubmit}>
     <div className="form-group">
     <label htmlFor="description">Description(Spent On):</label>
-    <input type="text" className="form-control" id="description" value={this.state.description} onChange={this.onChangeDescription.bind(this)} placeholder="Description"/>
+    <input type="text" className="form-control" id="description" value={this.state.description} onChange={this.onChangeDescription.bind(this)} placeholder="Description" required/>
     </div>
 
     <div className="form-group">
@@ -73,7 +73,7 @@ export class Createexpense extends Component {
     <div className="input-group-prepend">
       <span className="input-group-text">₦</span>
     </div>
-    <input type="number" className="form-control" id="amount" value={this.state.amount} onChange={this.onChangeAmount.bind(this)} placeholder="Amount spent"/>
+    <input type="number" className="form-control" id="amount" value={this.state.amount} onChange={this.onChangeAmount.bind(this)} placeholder="Amount spent" required/>
     </div>
     </div>
 

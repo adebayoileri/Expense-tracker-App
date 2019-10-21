@@ -47,11 +47,11 @@ router.put('/expense/update/:id',(req,res)=>{
 });
 
 //Get expense by ID
-router.get('/expense/:id',(req,res)=>{
-    Expense.findById(req.params.id)
-    .then(expense=> res.status(200).json(expense))
-    .catch(err => res.status(404).json(err))
-});
+// router.get('/expense/:id',(req,res)=>{
+//     Expense.findById(req.params.id)
+//     .then(expense=> res.status(200).json(expense))
+//     .catch(err => res.status(404).json(err))
+// });
 
 //Delete expense by id
 router.delete('/expense/:id',(req,res)=>{
