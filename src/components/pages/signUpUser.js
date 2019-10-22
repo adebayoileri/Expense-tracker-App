@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import {BrowserRouter as Router, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 export class signUpUser extends Component {
   constructor(props){
@@ -25,6 +26,9 @@ export class signUpUser extends Component {
       password:''
     })
     event.preventDefault();
+    axios.post('http://localhost:4300/api/v1/user/auth/signup',user)
+    .then(res => console.log(res.data))
+    .catch(err=>console.log(`Error:${err}`));
    console.log(user); 
   }
   onChangeEmail(e){

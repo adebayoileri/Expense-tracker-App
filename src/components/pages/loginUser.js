@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../App.css';
+import axios from 'axios';
 
 
 export class loginUser extends Component {
@@ -25,6 +26,9 @@ export class loginUser extends Component {
     }
     event.preventDefault();
    console.log(user); 
+   axios.post('http://localhost:4300/api/v1/user/auth/login', user)
+   .then(res => console.log(res.data))
+   .catch(err => console.log(`Error:${err}`));
   }
   onChangeEmail(e){
     this.setState({
