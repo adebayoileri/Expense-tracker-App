@@ -7,6 +7,7 @@ export default function expenseList() {
         <React.Fragment>
             <div className="container">
             <h1 className="text-center mt-40">List Of All Expenses</h1>
+            
             </div>
         </React.Fragment>
     )

@@ -11,12 +11,13 @@ router.get('/',(req,res)=>{
 
 //Create an expense
 router.post('/create',(req,res)=>{
-    const {description, category,amount }= req.body;
+    const {description, payment,category,amount }= req.body;
     const date = Date.parse(req.body.date);
     const newExpense = new Expense({
         _id: new mongoose.Types.ObjectId(),
         description,
         category,
+        payment,
         amount,
         date
     });
