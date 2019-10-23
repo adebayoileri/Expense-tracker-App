@@ -3,6 +3,19 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+
+
+const Expense =(props)=>{
+    return(
+                <tr>
+                <td>{props.expense.description }</td>
+              <td>{ props.expense.category }</td>
+               <td>₦{ props.expense.amount }</td>
+               <td>{ props.expense.payment }</td>
+                 <td>{ props.expense.date.substring(0,10) }</td>
+            </tr>
+        )
+}
 class expenseList extends Component{
     constructor(props){
         super(props);
@@ -15,6 +28,11 @@ class expenseList extends Component{
         axios.get('http://localhost:4300/api/v1/expenses')
         .then(res => this.setState({expenses: res.data}))
         .catch(err => console.log(err));
+    }
+    expenseTable(){
+        return this.state.expenses.map(currentexpense =>{
+            return <Expense expense={currentexpense} key={currentexpense._id} />
+        })
     }
     render(){
     return (
@@ -32,7 +50,7 @@ class expenseList extends Component{
                     </tr>
             </thead>
                 <tbody>
-
+                {this.expenseTable()}
                 </tbody>
             </table>
             <Link to="/create"><button type="button" className="btn btn-dark">Create new expense +</button></Link>

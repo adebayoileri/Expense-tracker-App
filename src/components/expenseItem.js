@@ -1,13 +1,14 @@
-import React from 'react'
+// import React from 'react'
 
-export default function expenseItem() {
-    return (
-        <tr>
-        <td>{this.props.expense.description}</td>
-        <td>{this.props.expense.category}</td>
-        <td>{this.props.expense.amount}</td>
-        <td>{this.props.expense.payment}</td>
-        <td>{this.props.expense.date.substring(0,10)}</td>
-    </tr>
-    )
-}
+// export default function expenseItem() {
+//     const {description,amount,category,payment,date} = this.props;
+//     return(
+//         <tr>
+//         <td>{ description }</td>
+//         <td>{ amount }</td>
+//         <td>{ category }</td>
+//         <td>{ payment }</td>
+//         <td>{ date.substring(0,10) }</td>
+//     </tr>
+//     )
+// }

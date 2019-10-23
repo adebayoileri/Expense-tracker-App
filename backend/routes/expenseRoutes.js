@@ -35,6 +35,7 @@ router.put('/expense/update/:id',(req,res)=>{
     .then(expense =>{
         expense.description = req.body.description;
         expense.category = req.body.category;
+        expense.payment = req.body.payment;
         expense.amount = req.body.amount;
         expense.date = Date.parse(req.body.date);
         expense.save()
