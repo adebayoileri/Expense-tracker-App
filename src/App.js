@@ -2,7 +2,6 @@ import React from 'react';
 import {BrowserRouter as Router, Route,Link} from 'react-router-dom';
 import NavBar from './components/layouts/NavBar';
 import Footer from './components/layouts/Footer';
-import editExpense from './components/editExpense';
 import createExpense from './components/Createexpense';
 import expenseList from './components/expenseList';
 import login from './components/pages/loginUser';
@@ -28,7 +27,6 @@ function App() {
       </div>
       </React.Fragment>
     )} />
-    <Route path="/expense/update/:id" component={editExpense}/>
     <Route path="/create" component={createExpense}/>
     <Route path="/about" component={about} />
     <Route path="/expenses" component={ expenseList} />
