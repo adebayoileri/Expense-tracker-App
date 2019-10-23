@@ -7,12 +7,12 @@ import axios from 'axios';
 
 const Expense =(props)=>{
     return(
-                <tr>
-                <td>{props.expense.description }</td>
-              <td>{ props.expense.category }</td>
-               <td>₦{ props.expense.amount }</td>
-               <td>{ props.expense.payment }</td>
-                 <td>{ props.expense.date.substring(0,10) }</td>
+            <tr>
+            <td>{props.expense.description }</td>
+            <td>{ props.expense.category }</td>
+            <td>₦{ props.expense.amount }</td>
+            <td>{ props.expense.payment }</td>
+            <td>{ props.expense.date.substring(0,10) }</td>
             </tr>
         )
 }
