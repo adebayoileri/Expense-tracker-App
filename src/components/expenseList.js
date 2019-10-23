@@ -1,9 +1,22 @@
-import React from 'react';
+import React ,{ Component }from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+class expenseList extends Component{
+    constructor(props){
+        super(props);
 
-export default function expenseList() {
+        this.state={
+            expenses:[]
+        }
+    }
+    componentDidMount(){
+        axios.get('http://localhost:4300/api/v1/expenses')
+        .then(res => this.setState({expenses: res.data}))
+        .catch(err => console.log(err));
+    }
+    render(){
     return (
         <React.Fragment>
             <div className="container">
@@ -26,4 +39,7 @@ export default function expenseList() {
         </div>
         </React.Fragment>
     )
+    }
 }
+
+export default expenseList;
