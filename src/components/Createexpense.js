@@ -83,7 +83,7 @@ export class Createexpense extends Component {
 
     <div className="form-group">
       <label htmlFor="payment-method">Payment Method:</label>
-      <select id="payment-method" value={this.state.payment} onChange={this.onChangePayment.bind(this)} className="form-control">
+      <select id="payment" value={this.state.payment} onChange={this.onChangePayment.bind(this)} className="form-control">
         <option>Cash</option>
         <option>Card</option>
         <option>Crypto</option>
