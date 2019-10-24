@@ -13,7 +13,9 @@ const Expense =(props)=>{
             <td>₦{ props.expense.amount }</td>
             <td>{ props.expense.payment }</td>
             <td>{ props.expense.date.substring(0,10) }</td>
-            <td><button style={{cursor:"pointer"}} className="btn btn-danger" onClick={()=>props.deleteExpense(props.expense._id)}>Delete</button> <button style={{cursor:"pointer"}}  className="btn btn-primary" onClick={()=>props.editExpense(props.expense._id)}>Edit</button></td>
+            <td>
+            <button style={{cursor:"pointer"}} className="btn btn-danger" onClick={()=>props.deleteExpense(props.expense._id)}>Delete</button>  || 
+             <Link style={{cursor:"pointer"}} to={"expense/update/"+props.expense._id} className="btn btn-primary" >Edit</Link></td>
             </tr>
         )
 }
@@ -25,6 +27,38 @@ class expenseList extends Component{
             expenses:[
                 {
                     _id:32,
+                    description:"Iya befe beans",
+                    category:"Food",
+                    payment: "Card",
+                    amount:300,
+                    date:"2019-31-09"
+                },
+                {
+                    _id:3532,
+                    description:"Iya befe beans",
+                    category:"Food",
+                    payment: "Card",
+                    amount:300,
+                    date:"2019-31-09"
+                },
+                {
+                    _id:3342,
+                    description:"Iya befe beans",
+                    category:"Food",
+                    payment: "Card",
+                    amount:300,
+                    date:"2019-31-09"
+                },
+                {
+                    _id:3,
+                    description:"Iya befe beans",
+                    category:"Food",
+                    payment: "Card",
+                    amount:300,
+                    date:"2019-31-09"
+                },
+                {
+                    _id:2,
                     description:"Iya befe beans",
                     category:"Food",
                     payment: "Card",

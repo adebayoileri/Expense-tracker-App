@@ -3,7 +3,7 @@ import '../../App.css';
 import 'react-fontawesome';
 import col from '../../img/col.png'
 
-export class about extends Component {
+class about extends Component {
     render() {
         return (
             <div className="container">

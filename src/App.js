@@ -9,6 +9,7 @@ import signup from './components/pages/signUpUser';
 import about from './components/pages/about';
 import './App.css';
 import money from './img/moneysvg.png';
+import editExpense from './components/editExpense';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
     <Route path="/expenses" component={ expenseList} />
     <Route path="/auth/login" component={login} />
     <Route path="/auth/signup" component={signup} />
+    <Route path="/expense/update/:id" component={editExpense} />
     <Footer/>
     </Router>
   );
