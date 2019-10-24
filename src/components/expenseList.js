@@ -13,7 +13,7 @@ const Expense =(props)=>{
             <td>₦{ props.expense.amount }</td>
             <td>{ props.expense.payment }</td>
             <td>{ props.expense.date.substring(0,10) }</td>
-            <td><button style={{cursor:"pointer"}} className="btn btn-danger" onClick={()=>props.deleteExpense(props.expense._id)}>Delete</button> <button style={{cursor:"pointer"}}  className="btn btn-primary">Edit</button></td>
+            <td><button style={{cursor:"pointer"}} className="btn btn-danger" onClick={()=>props.deleteExpense(props.expense._id)}>Delete</button> <button style={{cursor:"pointer"}}  className="btn btn-primary" onClick={()=>props.editExpense(props.expense._id)}>Edit</button></td>
             </tr>
         )
 }
@@ -41,11 +41,11 @@ class expenseList extends Component{
     }
     expenseTable(){
         return this.state.expenses.map(currentexpense =>{
-            return <Expense expense={currentexpense} key={currentexpense._id} deleteExpense={this.deleteExpense}/>
+            return <Expense expense={currentexpense} key={currentexpense._id} editExpense={this.editExpense}deleteExpense={this.deleteExpense}/>
         })
     }
     deleteExpense=(id)=>{
-        axios.delete('localhost:4300/api/v1/expenses/expense'+ id)
+        axios.delete('http://localhost:4300/api/v1/expenses/expense/'+id)
         .then(res => res.data)
         .catch(err => console.log(err));
         this.setState({
@@ -53,7 +53,12 @@ class expenseList extends Component{
                 expense._id !== id
           ))
         })
-
+    }
+    editExpense=(id)=>{
+        axios.put('http://localhost:4300/api/v1/expenses/expense/update/'+id)
+        .then(res => res.data)
+        .catch(err=> console.log(err));
+        window.location.replace('/create');
     }
     render(){
     return (
