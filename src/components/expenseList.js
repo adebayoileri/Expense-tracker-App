@@ -13,6 +13,7 @@ const Expense =(props)=>{
             <td>₦{ props.expense.amount }</td>
             <td>{ props.expense.payment }</td>
             <td>{ props.expense.date.substring(0,10) }</td>
+            <td><button style={{cursor:"pointer"}} className="btn btn-danger" onClick={()=>props.deleteExpense(props.expense._id)}>Delete</button> <button style={{cursor:"pointer"}}  className="btn btn-primary">Edit</button></td>
             </tr>
         )
 }
@@ -21,7 +22,16 @@ class expenseList extends Component{
         super(props);
 
         this.state={
-            expenses:[]
+            expenses:[
+                {
+                    _id:32,
+                    description:"Iya befe beans",
+                    category:"Food",
+                    payment: "Card",
+                    amount:300,
+                    date:"2019-31-09"
+                }
+            ]
         }
     }
     componentDidMount(){
@@ -31,8 +41,19 @@ class expenseList extends Component{
     }
     expenseTable(){
         return this.state.expenses.map(currentexpense =>{
-            return <Expense expense={currentexpense} key={currentexpense._id} />
+            return <Expense expense={currentexpense} key={currentexpense._id} deleteExpense={this.deleteExpense}/>
         })
+    }
+    deleteExpense=(id)=>{
+        axios.delete('localhost:4300/api/v1/expenses/expense'+ id)
+        .then(res => res.data)
+        .catch(err => console.log(err));
+        this.setState({
+           expenses: this.state.expenses.filter(expense=>(
+                expense._id !== id
+          ))
+        })
+
     }
     render(){
     return (
@@ -47,6 +68,7 @@ class expenseList extends Component{
                         <th>Amount</th>
                         <th>Payment-Method</th>
                         <th>Date</th>
+                        <th>Actions</th>
                     </tr>
             </thead>
                 <tbody>
