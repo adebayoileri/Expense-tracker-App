@@ -6,8 +6,7 @@ import axios from 'axios';
 class editExpense extends Component {
     constructor(props){
         super(props);
-    this.onSubmit =this.onSubmit.bind(this);
-
+        
         this.state = {
         description:'',
         category:'',
@@ -16,7 +15,17 @@ class editExpense extends Component {
         date:new Date()
          }
     }
-    onSubmit(event,id){
+    componentDidMount(){
+      axios.get('http://localhost:4300/api/v1/expenses/expense/'+this.props.match.params.id)
+      .then(res => this.setState({
+        description:res.data.description,
+        category:res.data.category,
+        payment:res.data.payment,
+        amount:res.data.amount,
+        date:new Date(res.data.date)
+      }))
+    }
+    onSubmit=(event,id)=>{
          const expense = {
              description:this.state.description,
            payment:this.state.payment,
@@ -26,7 +35,7 @@ class editExpense extends Component {
        }
        event.preventDefault();
       console.log(expense); 
-      axios.put('http://localhost:4300/api/v1/expenses/expense/update/'+id,expense)
+      axios.get('http://localhost:4300/api/v1/expenses/expense/update/'+id,expense)
       .then(res => console.log(res.data))
       .catch(err=> console.log(err));
        window.location ='/expenses';

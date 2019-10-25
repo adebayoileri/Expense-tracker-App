@@ -30,7 +30,9 @@ export class Createexpense extends Component {
       axios.post('http://localhost:4300/api/v1/expenses/create',expense)
       .then(res => console.log(res.data))
       .catch(err=> console.log(err));
-       window.location ='/expenses';
+      setTimeout(() => {
+          window.location ='/expenses';
+      }, 2500);
     }
         onChangeDescription(e){
         this.setState({
