@@ -3,15 +3,15 @@ const mongoose = require('mongoose');
 const router = express.Router();
 
 const Expense = require('../models/expense.model');
-const authUser = require('../middlewares/auth');
+// const authUser = require('../middlewares/auth');
 
 //Get all expenses
-router.get('/',authUser,(req,res)=>{
+router.get('/',(req,res)=>{
     Expense.find().then(expenses => res.json(expenses)).catch(err=> res.status(400).json(`Error:${err}`));
 });
 
 //Create an expense
-router.post('/create',authUser,(req,res)=>{
+router.post('/create',(req,res)=>{
     const {description, payment,category,amount }= req.body;
     const date = Date.parse(req.body.date);
     const newExpense = new Expense({
@@ -31,7 +31,7 @@ router.post('/create',authUser,(req,res)=>{
 });
 
 //Updated expense
-router.put('/expense/update/:id',authUser,(req,res)=>{
+router.put('/expense/update/:id',(req,res)=>{
     Expense.findById(req.params.id)
     .then(expense =>{
         expense.description = req.body.description;
@@ -57,7 +57,7 @@ router.put('/expense/update/:id',authUser,(req,res)=>{
 // });
 
 //Delete expense by id
-router.delete('/expense/:id',authUser,(req,res)=>{
+router.delete('/expense/:id',(req,res)=>{
     Expense.findByIdAndDelete(req.params.id)
     .then(()=> res.status(200).json('Expense Deleted'))
     .catch(err => res.status(404).json(err))
