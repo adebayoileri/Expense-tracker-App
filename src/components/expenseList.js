@@ -24,48 +24,7 @@ class expenseList extends Component{
         super(props);
 
         this.state={
-            expenses:[
-                {
-                    _id:32,
-                    description:"Iya befe beans",
-                    category:"Food",
-                    payment: "Card",
-                    amount:300,
-                    date:"2019-31-09"
-                },
-                {
-                    _id:3532,
-                    description:"Iya befe beans",
-                    category:"Food",
-                    payment: "Card",
-                    amount:300,
-                    date:"2019-31-09"
-                },
-                {
-                    _id:3342,
-                    description:"Iya befe beans",
-                    category:"Food",
-                    payment: "Card",
-                    amount:300,
-                    date:"2019-31-09"
-                },
-                {
-                    _id:3,
-                    description:"Iya befe beans",
-                    category:"Food",
-                    payment: "Card",
-                    amount:300,
-                    date:"2019-31-09"
-                },
-                {
-                    _id:2,
-                    description:"Iya befe beans",
-                    category:"Food",
-                    payment: "Card",
-                    amount:300,
-                    date:"2019-31-09"
-                }
-            ]
+            expenses:[ ]
         }
     }
     componentDidMount(){
