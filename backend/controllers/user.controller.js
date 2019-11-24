@@ -3,7 +3,7 @@ const bcrypt=require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user.model');
 class userController{
-    static signup(req,res,next){
+    static signup(req, res, next){
         User.find({email:req.body.email})
     .exec()
     .then( user =>{
@@ -41,7 +41,7 @@ class userController{
     next();
     };
 
-    static login(req,res,next){
+    static login(req, res, next){
         User.find({email : req.body.email})
         .exec()
         .then(user =>{
@@ -63,7 +63,7 @@ class userController{
                     },
                      process.env.JWT_KEY,
                      {
-                         expiresIn: "1h"
+                         expiresIn: "12h"
                      }
                     );
                     return res.status(200).json({
@@ -81,7 +81,7 @@ class userController{
         });
         next();
     }
-    deleteUser(req, res, next){
+    static deleteUser(req, res, next){
         User.deleteOne({ _id :req.params.userId})
         .exec()
         .then( reply =>{
@@ -99,4 +99,4 @@ class userController{
     }
 }
 
-export default userController;
+module.exports = userController;
