@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const expenseSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     description:{
-        type:String,
+        type: String,
         required: true
     },
     amount:{
@@ -11,7 +11,7 @@ const expenseSchema = mongoose.Schema({
         required:true
     },
     category:{
-        type:String,
+        type: String,
         required: true
     },
     date:{
