@@ -62,7 +62,7 @@ class userController{
                     },
                      process.env.JWT_KEY,
                      {
-                         expiresIn: "12h"
+                         expiresIn: "1h"
                      }
                     );
                     return res.status(200).json({
@@ -78,7 +78,6 @@ class userController{
                 error : err
             });
         });
-        next();
     }
     static deleteUser(req, res, next){
         User.deleteOne({ _id :req.params.userId})
