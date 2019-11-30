@@ -9,6 +9,8 @@ const bodyParser = require('body-parser');
 const userRoutes = require('./routes/userRoutes');
 const expenseRoutes = require('./routes/expenseRoutes');
 
+const authUser = require('./middlewares/auth');
+
 
 //Connect Database
 const uri = process.env.MONGO_ATLAS_DB;
@@ -49,8 +51,8 @@ app.use('*', (req, res, next) => {
 
 
 //Middlewares
-app.use('/api/v1/user/auth', userRoutes);
-app.use('/api/v1/expenses', expenseRoutes);
+app.use('/api/v1/user/auth', authUser, userRoutes);
+app.use('/api/v1/expenses', authUser, expenseRoutes);
 
 //PORT
 

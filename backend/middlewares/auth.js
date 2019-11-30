@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
     req.body.token = decoded;
   } catch (error) {
     return res.status(401).json({
-      message: 'Auth Failed (Invalid Token)'
+      message: 'Auth Failed (Invalid Token)',
     });
   }
   return next();
