@@ -27,7 +27,7 @@ export class signUpUser extends Component {
     })
     event.preventDefault();
     axios.post('http://localhost:4300/api/v1/user/auth/signup',user)
-    .then(res => res.json())
+    .then(res => res.data)
     .then(() => window.location.replace('/auth/login'))
     .catch(err=>console.log(`Error:${err}`));
    console.log(user); 
