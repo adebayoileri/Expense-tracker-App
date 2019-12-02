@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const userRoutes = require('./routes/userRoutes');
 const expenseRoutes = require('./routes/expenseRoutes');
 
-const authUser = require('./middlewares/auth');
+// const authUser = require('./middlewares/auth');
 
 
 //Connect Database
@@ -51,8 +51,8 @@ app.use('*', (req, res, next) => {
 
 
 //Middlewares
-app.use('/api/v1/user/auth', authUser, userRoutes);
-app.use('/api/v1/expenses', authUser, expenseRoutes);
+app.use('/api/v1/user/auth',  userRoutes);
+app.use('/api/v1/expenses', expenseRoutes);
 
 //PORT
 
