@@ -28,6 +28,7 @@ export class loginUser extends Component {
    console.log(user); 
    axios.post('http://localhost:4300/api/v1/user/auth/login', user)
    .then(res => console.log(res.data))
+   .then(() => window.location.replace('/expenses'))
    .catch(err => console.log(`Error:${err}`));
   }
   onChangeEmail(e){
