@@ -1,5 +1,5 @@
 const express = require('express');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
@@ -33,7 +33,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 // CORS POLICY
 app.use('*', (req, res, next) => {
@@ -56,10 +56,10 @@ app.use('/api/v1/expenses', expenseRoutes);
 
 //PORT
 
-const PORT = process.env.PORT || 4300;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
-  console.log('App started on port 4300');
+  console.log(`App started on port ${PORT}`);
 });
 
 // Test good route
