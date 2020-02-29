@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import '../../App.css';
 import 'react-fontawesome';
+import col from '../../img/col.png'
 
-export class about extends Component {
+class about extends Component {
     render() {
         return (
             <div className="container">
             <h1 className="text-center mt-40">About Expense Tracker App</h1>
+            <img src={col} style={{width:'100%',height:'350px auto'}}alt="card and money phone also"/>
        <section className="boxes">
     <div className="box" style={{background:'#39f'}}>
       <h3>Get a quick overview</h3>

@@ -4,9 +4,12 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 const bodyParser = require('body-parser');
+
 //Routes
 const userRoutes = require('./routes/userRoutes');
 const expenseRoutes = require('./routes/expenseRoutes');
+
+// const authUser = require('./middlewares/auth');
 
 
 //Connect Database
@@ -48,7 +51,7 @@ app.use('*', (req, res, next) => {
 
 
 //Middlewares
-app.use('/api/v1/user/auth', userRoutes);
+app.use('/api/v1/user/auth',  userRoutes);
 app.use('/api/v1/expenses', expenseRoutes);
 
 //PORT

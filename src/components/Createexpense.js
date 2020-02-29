@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-// import axios from 'axios';
+import axios from 'axios';
 
 export class Createexpense extends Component {
     constructor(props){
@@ -27,10 +27,12 @@ export class Createexpense extends Component {
        }
        event.preventDefault();
       console.log(expense); 
-    //   axios.post('http://localhost:4300/api/v1/expenses/create',expense)
-    //   .then(res => console.log(res.data))
-    //   .catch(err=> console.log(err));
-    //    window.location ='/expenses';
+      axios.post('http://expense-trackerapp.herokuapp.com/api/v1/expenses/create',expense)
+      .then(res => console.log(res.data))
+      .catch(err=> console.log(err));
+      setTimeout(() => {
+          window.location ='/expenses';
+      }, 2500);
     }
         onChangeDescription(e){
         this.setState({
@@ -83,7 +85,7 @@ export class Createexpense extends Component {
 
     <div className="form-group">
       <label htmlFor="payment-method">Payment Method:</label>
-      <select id="payment-method" value={this.state.payment} onChange={this.onChangePayment.bind(this)} className="form-control">
+      <select value={this.state.payment} onChange={this.onChangePayment.bind(this)} className="form-control" id="payment">
         <option>Cash</option>
         <option>Card</option>
         <option>Crypto</option>
