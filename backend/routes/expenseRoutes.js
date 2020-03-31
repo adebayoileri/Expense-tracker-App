@@ -7,6 +7,8 @@ const expenseController = require('../controllers/expense.controller');
 router.get('/',expenseController.getAllExpenses);
 
 //Create an expense
+router.post('/create', expenseController.createExpense);
+
 //Updated expense
 router.put('/expense/update/:id', expenseController.updateExpense);
 

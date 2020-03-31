@@ -32,7 +32,7 @@ export class Createexpense extends Component {
       .catch(err=> console.log(err));
       setTimeout(() => {
           window.location ='/expenses';
-      }, 2500);
+      }, 1000);
     }
         onChangeDescription(e){
         this.setState({
