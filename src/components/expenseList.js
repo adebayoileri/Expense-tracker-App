@@ -28,7 +28,7 @@ class expenseList extends Component{
         }
     }
     componentDidMount(){
-        axios.get('https://expense-trackerapp.herokuapp.com/api/v1/expenses')
+        axios.get('https://xpensetrackerapp.herokuapp.com/api/v1/expenses')
         .then(res => this.setState({expenses: res.data}))
         .catch(err => console.log(err));
     }
@@ -38,7 +38,7 @@ class expenseList extends Component{
         })
     }
     deleteExpense=(id)=>{
-        axios.delete('https://expense-trackerapp.herokuapp.com/api/v1/expenses/expense/'+id)
+        axios.delete('https://xpensetrackerapp.herokuapp.com/api/v1/expenses/expense/'+id)
         .then(res => res.data)
         .catch(err => console.log(err));
         this.setState({
@@ -48,7 +48,7 @@ class expenseList extends Component{
         })
     }
     editExpense=(id)=>{
-        axios.put('https://expense-trackerapp.herokuapp.com/api/v1/expenses/expense/update/'+id)
+        axios.put('https://xpensetrackerapp.herokuapp.com/api/v1/expenses/expense/update/'+id)
         .then(res => res.data)
         .catch(err=> console.log(err));
         window.location.replace('/create');

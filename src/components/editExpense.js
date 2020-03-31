@@ -16,7 +16,7 @@ class editExpense extends Component {
          }
     }
     componentDidMount(){
-      axios.get('https://expense-trackerapp.herokuapp.com/api/v1/expenses/expense/'+this.props.match.params.id)
+      axios.get('https://xpensetrackerapp.herokuapp.com/api/v1/expenses/expense/'+this.props.match.params.id)
       .then(res => this.setState({
         description:res.data.description,
         category:res.data.category,
@@ -35,7 +35,7 @@ class editExpense extends Component {
        }
        event.preventDefault();
       console.log(expense); 
-      axios.get('https://expense-trackerapp.herokuapp.com/api/v1/expenses/expense/update/'+id,expense)
+      axios.get('https://xpensetrackerapp.herokuapp.com/api/v1/expenses/expense/update/'+id,expense)
       .then(res => console.log(res.data))
       .catch(err=> console.log(err));
        window.location ='/expenses';

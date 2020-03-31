@@ -27,7 +27,7 @@ export class Createexpense extends Component {
        }
        event.preventDefault();
       console.log(expense); 
-      axios.post('https://expense-trackerapp.herokuapp.com/api/v1/expenses/create',expense)
+      axios.post('https://xpensetrackerapp.herokuapp.com/api/v1/expenses/create',expense)
       .then(res => console.log(res.data))
       .catch(err=> console.log(err));
       setTimeout(() => {
