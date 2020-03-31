@@ -35,7 +35,7 @@ class editExpense extends Component {
        }
        event.preventDefault();
       console.log(expense); 
-      axios.get('https://xpensetrackerapp.herokuapp.com/api/v1/expenses/expense/update/'+id,expense)
+      axios.put('https://xpensetrackerapp.herokuapp.com/api/v1/expenses/expense/update/'+id,expense)
       .then(res => console.log(res.data))
       .catch(err=> console.log(err));
        window.location ='/expenses';
