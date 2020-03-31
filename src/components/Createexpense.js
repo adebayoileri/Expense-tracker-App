@@ -19,11 +19,11 @@ export class Createexpense extends Component {
     }
     onSubmit(event){
          const expense = {
-             description:this.state.description,
-           payment:this.state.payment,
-           category:this.state.category,
-           amount:this.state.amount,
-           date:this.state.date
+            description:this.state.description,
+            payment:this.state.payment,
+            category:this.state.category,
+            amount:this.state.amount,
+            date:this.state.date
        }
        event.preventDefault();
       console.log(expense); 
@@ -84,8 +84,8 @@ export class Createexpense extends Component {
     </div>
 
     <div className="form-group">
-      <label htmlFor="payment-method">Payment Method:</label>
-      <select value={this.state.payment} onChange={this.onChangePayment.bind(this)} className="form-control" id="payment">
+      <label htmlFor="payment">Payment Method:</label>
+      <select className="form-control"  id="payment" value={this.state.payment} onChange={this.onChangePayment.bind(this)}>
         <option>Cash</option>
         <option>Card</option>
         <option>Crypto</option>
