@@ -12,7 +12,7 @@ This app is a simple expense tracker or budget tracker. It lets you record your 
 | GET /api/v1/expenses | Fetch all the expenses of a logged in user |
 | GET api/v1/expenses/:expenseId| Fetch an expense that belongs to a logged in user |
 | POST /api/v1/expenses/create | Create an expense. |
-| PUT /api/v1/:expenstId | Modify a request. |
+| PUT /api/v1/:expenstId | Modify an expense. |
 
 
 ## Installation
@@ -22,8 +22,8 @@ Clone the repo to your local machine
 - Run `npm run test` for testing 
 
 ## Hosted Pages
-https://myexpensetrackerapp.netlify.com/
-https://xpensetrackerapp.herokuapp.com/
+- https://myexpensetrackerapp.netlify.com/
+- https://xpensetrackerapp.herokuapp.com/
 
 
 ## License
